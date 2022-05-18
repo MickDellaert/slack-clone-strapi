@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "messagebody": {
+      "type": "text",
+      "default": "messagebody goes here"
+    },
+    "channel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::channel.channel",
+      "inversedBy": "messages"
+    },
+    "chatuser": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chatuser.chatuser",
+      "inversedBy": "messages"
+    }
+  }
+}
