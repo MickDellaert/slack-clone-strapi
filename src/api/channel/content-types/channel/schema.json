@@ -20,6 +20,12 @@
       "relation": "oneToMany",
       "target": "api::message.message",
       "mappedBy": "channel"
+    },
+    "chatusers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chatuser.chatuser",
+      "inversedBy": "channels"
     }
   }
 }
