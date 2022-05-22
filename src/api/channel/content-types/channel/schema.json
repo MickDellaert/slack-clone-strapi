@@ -15,16 +15,16 @@
     "channelname": {
       "type": "string"
     },
-    "messages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::message.message",
-      "mappedBy": "channel"
-    },
     "chatusers": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::chatuser.chatuser",
+      "mappedBy": "channel"
+    },
+    "messages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::message.message",
       "inversedBy": "channels"
     }
   }

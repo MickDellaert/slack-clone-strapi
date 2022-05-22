@@ -16,17 +16,20 @@
       "type": "text",
       "default": "messagebody goes here"
     },
-    "channel": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::channel.channel",
-      "inversedBy": "messages"
-    },
     "chatuser": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::chatuser.chatuser",
       "inversedBy": "messages"
+    },
+    "channels": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::channel.channel",
+      "mappedBy": "messages"
+    },
+    "currentuser": {
+      "type": "string"
     }
   }
 }
